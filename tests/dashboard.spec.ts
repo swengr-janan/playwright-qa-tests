@@ -1,4 +1,4 @@
-import {test, expect} from './fixtures/authenticated';
+import {test, expect} from './fixtures/auth-fixture';
 
 test('Should show dashboard after login', async ({ loginPage }) => {
     await expect(loginPage.page).toHaveURL(/dashboard/);
