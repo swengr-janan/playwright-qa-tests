@@ -27,8 +27,11 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
 
+      - name: Set branch-safe name
+        run: echo "BRANCH_NAME=${GITHUB_REF_NAME//\//-}" >> $GITHUB_ENV
+
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-${{ github.ref_name.replace('/','-') }}
+          name: playwright-report-${{ env.BRANCH_NAME }}
           path: playwright-report
