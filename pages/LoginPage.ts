@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { validAccounts } from '../utils/testData';
 
 export class LoginPage {
   readonly page: Page;
@@ -29,5 +30,14 @@ export class LoginPage {
     await this.errorMessage.waitFor();
     await this.page.waitForTimeout(500); // small delay to stabilize
     await expect(this.errorMessage).toHaveText('Invalid credentials');
+  }
+
+  async assertSuccessfulLogin(){
+    await this.page.waitForURL('**/dashboard/**')
+    await expect(this.page.getByRole('heading',{ name: 'Dashboard'})).toBeVisible();
+  }
+
+  async loginAsValidUser() {
+    await this.login(validAccounts.username, validAccounts.password);
   }
 }
