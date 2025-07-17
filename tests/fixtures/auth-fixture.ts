@@ -10,7 +10,7 @@ export const test = base.extend<AuthFixtures>({
         const loginPage = new LoginPage(page);
         await loginPage.goto();
         await loginPage.loginAsValidUser();
-        await page.waitForURL('/dashboard/')
+        await page.waitForURL(/dashboard/)
         await use(loginPage);
     }
 });
