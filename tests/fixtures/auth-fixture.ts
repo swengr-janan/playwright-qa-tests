@@ -1,17 +1,17 @@
-import { test as base, expect } from '@playwright/test'
+import { test as base, expect, Page } from '@playwright/test'
 import { LoginPage } from '../../pages/LoginPage'
 
 type AuthFixtures = {
-    loginPage: LoginPage;
+    page: Page;
 };
 
 export const test = base.extend<AuthFixtures>({
-    loginPage: async ({ page }, use) => {
+    page: async ({ page }, use) => {
         const loginPage = new LoginPage(page);
         await loginPage.goto();
         await loginPage.loginAsValidUser();
         await page.waitForURL(/dashboard/)
-        await use(loginPage);
+        await use(page);
     }
 });
 
