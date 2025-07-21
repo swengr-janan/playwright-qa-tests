@@ -1,14 +1,11 @@
-import {test, expect} from '@playwright/test';
+import {test} from '../fixtures/basic-fixture'
+import { invalidAccounts } from '../../utils/testData'
 
-test('This test should checki if the credentials is invalid', async ({ page }) => {
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+for (const creds of invalidAccounts){
+    test(`@negative Should show error for invalid login: ${creds.username}`, async ({page, loginPage}) => {
+        await loginPage.goto();
+        await loginPage.login(creds.username, creds.password);
+        await loginPage.assertInvalidLoginMessage();
+    });
+}
 
-    await page.fill('input[name="username"]', "janan2ny");
-    await page.fill('input[name="password"]',  "pluto");
-
-    await page.click('button:has-text("Login")');
-
-    await expect(page.locator('.oxd-alert-content-text')).toBeVisible();
-    await expect(page.locator('.oxd-alert-content-text')).toHaveText('Invalid credentials');
-
-})

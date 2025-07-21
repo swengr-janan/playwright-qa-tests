@@ -1,4 +1,4 @@
-import {test} from '../fixtures/login-fixture'
+import {test} from '../fixtures/basic-fixture'
 import { validAccounts } from '../../utils/testData'
 
 test('@positive This test should is for successful login', async ({ loginPage }) => {
