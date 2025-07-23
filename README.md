@@ -89,10 +89,3 @@ John Anthony Balbin
 ---
 
 Happy testing! 🧪✨
-
-```
-
----
-
-Let me know if you want this exported to a `.md` file or want to include `.env` handling or valid login testing as the next step!
-```
