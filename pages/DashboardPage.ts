@@ -24,5 +24,12 @@ export class DashboardPage {
         const modal = this.page.locator('.oxd-dialog-sheet');
         await expect(modal).toBeVisible();
         await expect (modal.locator('h6')).toHaveText('About');
+        await expect(modal).toContainText('Company Name');
+        await expect(modal).toContainText('Version');
+    }
+
+    async closeAboutModal(){
+        await this.page.locator('.oxd-dialog-close-button').click();
+        await expect(this.page.locator('.oxd-dialog-sheet')).toBeHidden();
     }
 }
