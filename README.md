@@ -5,26 +5,6 @@ This project demonstrates automated login tests using [Playwright](https://playw
 
 ---
 
-## 📁 Folder Structure
-
-```
-
-.
-├── fixtures/
-│   └── login-fixture.ts         # Custom fixture to create LoginPage instance
-├── pages/
-│   └── LoginPage.ts             # Page Object Model for login page
-├── tests/
-│   └── login.spec.ts            # Actual login tests (invalid logins)
-├── utils/
-│   └── testData.ts              # Contains invalid test credentials
-├── README.md
-└── package.json
-
-````
-
----
-
 ## 🛠️ Prerequisites
 
 - [Node.js](https://nodejs.org/) v18 or higher
