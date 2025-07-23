@@ -27,9 +27,8 @@ export class LoginPage {
   }
 
   async assertInvalidLoginMessage() {
-    await this.errorMessage.waitFor();
-    await this.page.waitForTimeout(500); // small delay to stabilize
-    await expect(this.errorMessage).toHaveText('Invalid credentials');
+    await expect(this.errorMessage).toBeVisible({timeout:5000});
+    await expect(this.errorMessage).toHaveText('Invalid credentials')
   }
 
   async assertSuccessfulLogin(){
