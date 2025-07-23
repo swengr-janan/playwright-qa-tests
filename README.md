@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Playwright Login Test Automation
 
 This project demonstrates automated login tests using [Playwright](https://playwright.dev/), with a structured approach using **fixtures**, **Page Object Model (POM)**, and **test data-driven testing**.
