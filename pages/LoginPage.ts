@@ -37,6 +37,6 @@ export class LoginPage {
   }
 
   async loginAsValidUser() {
-    await this.login(validAccounts.username, validAccounts.password);
+    await this.login(validAccounts.admin.username, validAccounts.admin.password);
   }
 }

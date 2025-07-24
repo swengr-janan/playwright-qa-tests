@@ -5,5 +5,6 @@ export const invalidAccounts = [
 ];
 
 export const validAccounts = {
-    username:'Admin', password:'admin123',
+    admin: {username:'Admin', password:'admin123'},
+    employee: {username:'ploot', password:'ploot123'}
 };

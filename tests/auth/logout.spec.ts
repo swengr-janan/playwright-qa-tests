@@ -4,7 +4,7 @@ import { validAccounts } from '../../utils/testData';
 test('This test should logout and redirect the user to login page', async ({page, loginPage}) => {
 
     await loginPage.goto()
-    await loginPage.login(validAccounts.username, validAccounts.password);
+    await loginPage.login(validAccounts.admin.username, validAccounts.admin.password);
     await loginPage.assertSuccessfulLogin();
 
     await page.click('.oxd-userdropdown-tab');
